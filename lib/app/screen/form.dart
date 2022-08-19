@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:primeiro_app/app/screen/home_screen.dart';
 
 class Form extends StatefulWidget {
   const Form({Key? key, required this.title}) : super(key: key);
@@ -41,13 +42,19 @@ class _FormState extends State<Form> {
             ListTile(
               title: const Text('Home Screen'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen(title: "Home")),
+                );
               },
             ),
             ListTile(
               title: const Text('Formulário'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Form(title: "Formulário")),
+                );
               },
             ),
           ],
