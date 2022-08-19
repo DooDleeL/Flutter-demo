@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:primeiro_app/app/screen/home_screen.dart';
 
-class Form extends StatefulWidget {
-  const Form({Key? key, required this.title}) : super(key: key);
+class FormScreen extends StatefulWidget {
+  const FormScreen({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  State<Form> createState() => _FormState();
+  State<FormScreen> createState() => _FormState();
 }
 
-class _FormState extends State<Form> {
+class _FormState extends State<FormScreen> {
   final myController = TextEditingController();
   List<String> inputList = [];
 
@@ -37,14 +37,19 @@ class _FormState extends State<Form> {
                 color: Colors.blue,
               ),
               child: Text('Menu',
-                  style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w700, fontStyle: FontStyle.italic)),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 32,
+                      fontWeight: FontWeight.w700,
+                      fontStyle: FontStyle.italic)),
             ),
             ListTile(
               title: const Text('Home Screen'),
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomeScreen(title: "Home")),
+                  MaterialPageRoute(
+                      builder: (context) => HomeScreen(title: "Home")),
                 );
               },
             ),
@@ -53,7 +58,8 @@ class _FormState extends State<Form> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Form(title: "Formulário")),
+                  MaterialPageRoute(
+                      builder: (context) => FormScreen(title: "Formulário")),
                 );
               },
             ),
