@@ -1,59 +1,57 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'package:primeiro_app/app/screen/home_screen.dart';
 import 'package:primeiro_app/app/screen/form_screen.dart';
+import 'package:primeiro_app/app/screen/home_screen.dart';
 
 import '../screen/galeria.screen.dart';
 
 Widget Menu(BuildContext context) {
-  return
-    Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-            child: Text('Menu',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 32,
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.italic)),
+  return Drawer(
+    child: ListView(
+      padding: EdgeInsets.zero,
+      children: [
+        const DrawerHeader(
+          decoration: BoxDecoration(
+            color: Colors.blue,
           ),
-          ListTile(
-            title: const Text('Home Screen'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => HomeScreen(title: "Home")),
-              );
-            },
-          ),
-          ListTile(
-            title: const Text('Formulário'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => FormScreen(title: "Formulário")),
-              );
-            },
-          ),
-          ListTile(
-            title: const Text('Galeria'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => GalleryScreen(title: "Galeria")),
-              );
-            },
-          )
-        ],
-      ),
-    );
+          child: Text('Menu',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 32,
+                  fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.italic)),
+        ),
+        ListTile(
+          title: const Text('Home Screen'),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => HomeScreen(title: "Home")),
+            );
+          },
+        ),
+        ListTile(
+          title: const Text('Formulário'),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => FormScreen(title: "Formulário")),
+            );
+          },
+        ),
+        ListTile(
+          title: const Text('Galeria'),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => GalleryScreen(title: "Galeria")),
+            );
+          },
+        )
+      ],
+    ),
+  );
 }
