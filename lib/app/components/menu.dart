@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:primeiro_app/app/screen/home_screen.dart';
-import 'package:primeiro_app/app/screen/form.dart';
+import 'package:primeiro_app/app/screen/form_screen.dart';
+
+import '../screen/galeria.screen.dart';
 
 Widget Menu(BuildContext context) {
   return
@@ -41,6 +43,16 @@ Widget Menu(BuildContext context) {
               );
             },
           ),
+          ListTile(
+            title: const Text('Galeria'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => GalleryScreen(title: "Galeria")),
+              );
+            },
+          )
         ],
       ),
     );

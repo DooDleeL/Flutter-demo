@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:primeiro_app/app/components/menu.dart';
 import 'package:primeiro_app/app/screen/home_screen.dart';
 
 class FormScreen extends StatefulWidget {
@@ -28,44 +29,7 @@ class _FormState extends State<FormScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Menu',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 32,
-                      fontWeight: FontWeight.w700,
-                      fontStyle: FontStyle.italic)),
-            ),
-            ListTile(
-              title: const Text('Home Screen'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => HomeScreen(title: "Home")),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Formulário'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => FormScreen(title: "Formulário")),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: Menu(context),
       appBar: AppBar(
         title: Text('Retorna o valor de TextField'),
       ),
